@@ -23,8 +23,8 @@ const sendToAlice = async (req, res) => {
     // console.log(entities[0]);
     // console.log(req.body)
 
-    let first_name = null && entities[0] && entities[0].value && entities[0].value.first_name;
-    let last_name = null && entities[0] && entities[0].value && entities[0].value.last_name;
+    let first_name = entities[0] && entities[0].value && entities[0].value.first_name;
+    let last_name = entities[0] && entities[0].value && entities[0].value.last_name;
   
     console.log(first_name)
 
