@@ -6,7 +6,7 @@ heroku open
 heroku logs --tail
 
 */
-const replics = require('../public/replics/replics.json');
+const { getReplic } = require('../public/replics/getReplic');
 
 const { standartPattern } = require("../public/responsePatterns/standartPattern");
 
@@ -27,9 +27,9 @@ const sendToAlice = async (req, res) => {
     let last_name = entities[0] && entities[0].value && entities[0].value.last_name;
 
     if(message_id == 0) {
-        res.send(standartPattern(replics[0].text))
+        res.send(standartPattern(getReplic()[0].text))
     } else {
-        res.send(standartPattern(replics[1].text, first_name))
+        res.send(standartPattern(getReplic(first_name)[1].text))
     }
     
 }
