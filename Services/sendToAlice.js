@@ -21,12 +21,10 @@ const sendToAlice = async (req, res) => {
     // console.log(command);
     // console.log(tokens);
     // console.log(entities[0]);
-    // console.log(req.body)
+    console.log(req.body)
 
     let first_name = entities[0] && entities[0].value && entities[0].value.first_name;
     let last_name = entities[0] && entities[0].value && entities[0].value.last_name;
-  
-    console.log(first_name)
 
     if(message_id == 0) {
         res.send(standartPattern(replics[0].text))
