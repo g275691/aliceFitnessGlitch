@@ -15,21 +15,23 @@ const sendToAlice = async (req, res) => {
     const { message_id, user_id } = req.body.session;
     const { command, original_utterance } = req.body.request;
     const { tokens, entities } = req.body.request.nlu;
-    const { state } = req.body.state;
+    // const { state } = req.body.state;
 
-    console.log(message_id);
-    console.log(command);
-    console.log(tokens);
-    console.log(entities[0]);
-    console.log(state)
+    // console.log(message_id);
+    // console.log(command);
+    // console.log(tokens);
+    // console.log(entities[0]);
+    // console.log(req.body)
 
     let first_name = null && entities[0] && entities[0].value && entities[0].value.first_name;
     let last_name = null && entities[0] && entities[0].value && entities[0].value.last_name;
+  
+    console.log(first_name)
 
     if(message_id == 0) {
-        res.send(standartPattern(replic[0].text))
+        res.send(standartPattern(replics[0].text))
     } else {
-        res.send(standartPattern(replic[1].text, first_name))
+        res.send(standartPattern(replics[1].text, first_name))
     }
     
 }

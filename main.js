@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express()
 const bodyParser = require('body-parser');
-const { sendToAlice } = require('./controllers/sendToAlice');
+const { sendToAlice } = require('./Services/sendToAlice');
 const path = require('path');
 const { PORT } = require('./src/constants/server');
 

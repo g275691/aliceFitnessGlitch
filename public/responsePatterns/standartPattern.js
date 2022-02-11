@@ -8,10 +8,10 @@ const standartPattern = (
    ) => {
 
   /USER_FIRST_NAME/i.test(text) 
-  && (text = text.replace(/USER_FIRST_NAME/, user_first_name))
+  && (text = text.replace(/USER_FIRST_NAME/, user_first_name));
 
   /USER_LAST_NAME/i.test(text) 
-  && (text = text.replace(/USER_LAST_NAME/, user_last_name))
+  && (text = text.replace(/USER_LAST_NAME/, user_last_name));
   return {
     "response": {
       text,
